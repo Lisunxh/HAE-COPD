@@ -24,9 +24,6 @@ Tested with Python 3.10.20 and PyTorch 2.8.0 (CUDA 12.8), on CPU and GPU.
 
 `dataloader/__init__.py`, `models/__init__.py`  Python package markers. 
 
-`THIRD_PARTY_NOTICES.md`, `LICENSE.upstream.txt`  Upstream attribution and license information.
-
-
 ```bash
 pip install -r requirements.txt
 python -B run.py
