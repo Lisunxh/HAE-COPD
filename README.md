@@ -1,0 +1,35 @@
+# HAE
+
+Minimal HAE demo using a random input and randomly initialized weights.
+
+Tested with Python 3.10.20 and PyTorch 2.8.0 (CUDA 12.8), on CPU and GPU.
+
+`run.py`  Run a forward pass with one random input of shape `(1, 2, 4096)`.
+
+`runtime.py`  Configure cache paths and PyTorch settings; restrict Python file writes to this folder. cuDNN TF32 is enabled; matrix-multiplication TF32 is disabled.
+
+`requirements.txt`  Python dependencies. 
+
+`dataloader/dataset.py`  Dataset and batch preparation. 
+
+`dataloader/augmentation.py`  Signal augmentation. 
+
+`models/hae.py`  HAE encoder, decoder and masking modules. 
+
+`models/classifier.py`  Classification model and prediction head. 
+
+`models/embeddings.py`  Positional and physiological phase embeddings. 
+
+`models/reconstruction.py`  Reconstruction metrics. 
+
+`dataloader/__init__.py`, `models/__init__.py`  Python package markers. 
+
+`THIRD_PARTY_NOTICES.md`, `LICENSE.upstream.txt`  Upstream attribution and license information.
+
+
+```bash
+pip install -r requirements.txt
+python -B run.py
+```
+
+`.runtime/` is a disposable cache folder recreated when running the demo. The demo checks model execution.
