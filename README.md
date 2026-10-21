@@ -2,6 +2,10 @@
 
 HAE model demo, pretraining, fine-tuning and evaluation.
 
+The proposed framework and model architecture are illustrated below.
+
+![Proposed framework and model architecture](assets/model_architecture.png)
+
 Tested with Python 3.10.20 and PyTorch 2.8.0 (CUDA 12.8), on CPU and GPU.
 
 `run.py`  Run a forward pass with one random input of shape `(1, 2, 4096)`.
@@ -38,7 +42,7 @@ python -B run.py
 
 `.runtime/` is a disposable cache folder recreated when running the demo. The demo checks model execution.
 
-Training requires trusted, already-preprocessed NPY dictionaries, not raw waveform exports. Required fields: `data_array` (N,2,4096), `phase_array` (N,4096), `demographic_normalized_array` (N,5), `impedance_array` (N,8), `label_array` (N,K; binary label in column 0), `result_array` (N,R), `idx_array` (N), and `stratify` (one value per recording). Record indices must be consecutive from zero.
+Training requires preprocessed NPY dictionaries, not raw waveform exports. Required fields: `data_array` (N,2,4096), `phase_array` (N,4096), `demographic_normalized_array` (N,5), `impedance_array` (N,8), `label_array` (N,K; binary label in column 0), `result_array` (N,R), `idx_array` (N), and `stratify` (one value per recording). Record indices must be consecutive from zero.
 
 ```bash
 python -B train.py --internal /path/to/internal.npy --output outputs/train
