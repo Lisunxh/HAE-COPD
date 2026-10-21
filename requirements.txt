@@ -5,3 +5,4 @@ scipy==1.15.3
 scikit-learn==1.7.2
 matplotlib==3.10.9
 tqdm==4.67.1
+torch-ema==0.3
